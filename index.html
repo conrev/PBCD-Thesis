@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PBCD seamlessly enrich traditional character animation with physically-based secondary effects.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Position-based Complementary Dynamics</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="/static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Position-based Complementary Dynamics</h1>
+          <p class="is-size-4 has-text-weight-light has-text-grey">Master's Thesis</p>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/conrev">Andrew Mahisa Halim</a>
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            Supervised by <a href="https://www.jorgegoncalves.com/">A/Prof. Jorge Goncalves</a> and <a href="https://hessianguo.github.io/">Dr. Hailong Guo</a> 
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/pdf/MCS_Thesis_Final.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/conrev/PBCD"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://conrev.github.io/PBCD"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-paper-plane"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+              <div class="columns is-vcentered interpolation-panel">
+                <div class="column is-half has-text-centered">
+                  <video id="teaser" autoplay muted loop playsinline height="100%">
+                    <source src="./static/videos/FishInput.mp4"
+                    type="video/mp4">
+                </video>
+                  <p>Input</p>
+                </div>
+                <div class="column is-half has-text-centered">
+                  <video id="teaser" autoplay muted loop playsinline height="100%">
+                    <source src="./static/videos/FishOurs.mp4"
+                    type="video/mp4">
+                </video>
+                  <p class="is-bold">Output</p>
+                </div>
+              </div>
+              <br/>
+
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/FishOurs.mp4"
+                type="video/mp4">
+      </video> -->
+      <h2 class="subtitle has-text-centered">
+        PBCD seamlessly <span class="has-text-weight-bold">enrich</span> traditional character animation with physically-based secondary effects.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+                  To accommodate the ever-increasing demand for realism, contemporary character animations
+      are not only required to portray the character’s main course of action, but also the subtle
+      complementary movements that accompany it. While the character’s main pose tends to be
+      quite simple to animate, complementary movements such as cloth swaying and body jiggles are
+      painstakingly tedious to animate by hand. For this reason, numerous works have tried to build
+      a pipeline that integrates traditional animation with physics-based animation, allowing these
+      complementary effects to be captured via simulation. However, because physics-based animation
+      deals with physical quantities (e.g. forces, torques) that require translational mechanisms to work
+      together with handcrafted animation, these pipelines sacrifice artistic control and performance
+      in the process.
+</p>
+
+          <p>
+          In this thesis, we propose a novel animation pipeline that is “position-only”. By only working
+          with positions, the most intuitive quantity, our pipeline produces physically plausible character motions without foregoing intuitiveness and artistic control. To this end, we develop a
+          physics-based animation algorithm capable of producing the aforementioned complementary
+          effects without requiring forces or other physical quantities as input. In addition, the performance overhead stemming from having to transform our input into physical quantities are
+          circumvented completely. To put our claims to the test, we run several experiments and a user
+          study utilising characters of varying complexity. We demonstrate that, apart from a few visual
+          artefacts, our method produces comparable visuals to other pipelines all while being much
+          faster and more intuitive to control.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!--/ Abstract. -->
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+    <h2 class="title is-3">Showcase</h2>
+    <div id="results-carousel" class="carousel results-carousel">
+      <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+        <source src="./static/videos/SuzanneOurs.mp4"
+                type="video/mp4">
+      </video>
+    <div class="item item-chair-tp">
+      <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+        <source src="./static/videos/Output.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+    <div class="item">
+      <video poster="" id="" autoplay controls muted loop playsinline height="100%">
+        <source src="./static/videos/FishOurs.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">High-level Overview</h2>
+        <img class="content" src="static/images/FinalPipelineColor.png"/>
+        <div class="content has-text-justified">
+      </p> PBCD follows a simple two layer architecture. 
+      First, character mesh is deformed using linear blend skinning to capture the artist's desired pose 
+      Then, it is fed to a physics-based simulation algorithm based on <span class="is-italic">position-based dynamics</span> (SMPBD). 
+      The result of this two step is a character pose that captures the physical and artistic movements at the same time.
+     </p>
+     </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{halim2023pbcd,
+  author    = {Halim, Andrew Mahisa and Goncalves, Jorge and Guo, Hailong},
+  title     = {Position-based Complementary Dynamics:
+    Unified Pipeline for Physically Plausible
+    Character Animations},
+  year      = {2023},
+  school={School of Computing and Information Systems,
+    The University of Melbourne}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/pdf/MCS_Thesis_Final.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/conrev" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The site structure is largely adapted from <a href="https://nerfies.github.io" class="dnerf">Nerfies</span></a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
